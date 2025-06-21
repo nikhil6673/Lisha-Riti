@@ -11,10 +11,10 @@ export default function LearningHierarchy() {
   const fetchData = async () => {
     let endpoint = '';
     if (level === 'subjects') endpoint = '/api/subjects';
-    if (level === 'units') endpoint = \`/api/units?subject=\${selected.subject}\`;
-    if (level === 'chapters') endpoint = \`/api/chapters?unit=\${selected.unit}\`;
-    if (level === 'subtopics') endpoint = \`/api/subtopics?chapter=\${selected.chapter}\`;
-    if (level === 'questions') endpoint = \`/api/questions?subtopic=\${selected.subtopic}\`;
+    if (level === 'units') endpoint = `/api/units?subject=${selected.subject}`;
+    if (level === 'chapters') endpoint = `/api/chapters?unit=${selected.unit}`;
+    if (level === 'subtopics') endpoint = `/api/subtopics?chapter=${selected.chapter}`;
+    if (level === 'questions') endpoint = `/api/questions?subtopic=${selected.subtopic}`;
 
     try {
       const res = await axios.get(endpoint);
